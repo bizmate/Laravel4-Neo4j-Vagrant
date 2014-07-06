@@ -17,6 +17,7 @@ PHP 5.4 w/ Apache 2.2 is available on the php54 branch.
 * (the first time you run vagrant it will need to fetch the virtual box image which is ~300mb so depending on your download speed this could take some time)
 * Vagrant will then use puppet to provision the base virtual box with our LAMP stack (this could take a few minutes) also note that composer will need to fetch all of the packages defined in the app's composer.json which will add some more time to the first provisioning run
 * You can verify that everything was successful by opening http://localhost:8888 in a browser
+* You can access neo4j to do cypher queries by opening http://localhost:7474 in a browser
 
 *Note: You may have to change permissions on the www/app/storage folder to 777 under the host OS* 
 
@@ -39,6 +40,9 @@ Some basic information on interacting with the vagrant box
 * Password: (blank)
 * DB Name: database
 
+### Neo4j info
+
+*If you need to enable access from external hosts, configure the Web server in the conf/neo4j-server.properties by setting the property org.neo4j.server.webserver.address=0.0.0.0 to enable access from any host.
 
 ### PHPmyAdmin
 
@@ -83,3 +87,4 @@ Vagrant is [very well documented](http://vagrantup.com/v1/docs/index.html) but h
 * Beanstalkd - 1.4.6
 * Redis - 2.2.12
 * Memcached - 1.4.13
+* Neo4j - 2.1.2
