@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# start root shell
-sudo -s
 # Import neo4j signing key
 wget -O - http://debian.neo4j.org/neotechnology.gpg.key | apt-key add - 
 # Create an Apt sources.list file
