@@ -1,6 +1,6 @@
 # Laravel 4 w/ Vagrant
 
-A basic Ubuntu 12.04 Vagrant setup with [Laravel4](http://laravel.com/docs) and PHP 5.5.
+A basic Ubuntu 12.04 Vagrant setup with [Laravel4](http://laravel.com/docs), PHP 5.5 and neo4j community edition.
 PHP 5.4 w/ Apache 2.2 is available on the php54 branch.
 
 ## Requirements
@@ -17,7 +17,7 @@ PHP 5.4 w/ Apache 2.2 is available on the php54 branch.
 * (the first time you run vagrant it will need to fetch the virtual box image which is ~300mb so depending on your download speed this could take some time)
 * Vagrant will then use puppet to provision the base virtual box with our LAMP stack (this could take a few minutes) also note that composer will need to fetch all of the packages defined in the app's composer.json which will add some more time to the first provisioning run
 * You can verify that everything was successful by opening http://localhost:8888 in a browser
-* You can access neo4j to do cypher queries by opening http://localhost:7474 in a browser
+* You can access neo4j to do cypher queries by opening http://localhost:8090 in a browser
 
 *Note: You may have to change permissions on the www/app/storage folder to 777 under the host OS* 
 
@@ -30,7 +30,8 @@ Some basic information on interacting with the vagrant box
 ### Port Forwards
 
 * 8888 - Apache
-* 8889 - MySQL 
+* 8889 - MySQL
+* 8090 - Neo4j
 * 5433 - PostgreSQL
 
 
