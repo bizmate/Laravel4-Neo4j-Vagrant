@@ -31,8 +31,5 @@ Vagrant.configure("2") do |config|
         end
 
         lv4_config.vm.provision :shell, :path => "puppet/scripts/enable_remote_mysql_access.sh"
-        # Include shell script to install neo4j database
-        # FIXME: integrate this properly into puppet
-        lv4_config.vm.provision :shell, :path => "puppet/scripts/install_neo4j.sh"
     end
 end
