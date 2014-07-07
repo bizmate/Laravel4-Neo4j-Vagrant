@@ -28,22 +28,6 @@ class laravel_app
 		timeout => 1800,
 		logoutput => true
 	}
-	
-	exec { 'add laravel neo4j dependencies':
-		command <<-ENDBAR.gsub /^#{self[/\A\s*/]}/, ''
-		    /bin/bash -c 'echo -e "{
-    		        "require": {
-		            "everyman/neo4jphp":"dev-master",
-		            "lrezek/neo4php":"dev-master",
-		            "lrezek/neo4laravel": "dev-custom"
-    		        }
-		    }" >> /var/www/composer.json'	
-  		ENDBAR 
-       		onlyif => [ "test -f /var/www/composer.json", "test -d /var/www/vendor" ],
-        	timeout => 900,
-        	logoutput => true
-    }
-}
 
 	exec { 'update packages':
         command => "/bin/sh -c 'cd /var/www/ && composer --verbose --prefer-dist update'",
