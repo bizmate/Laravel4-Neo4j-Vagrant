@@ -25,6 +25,8 @@ include beanstalkd
 include redis
 include memcached
 include composer
+include apt
+include neo4j
 
 include laravel_app
 
