@@ -1,4 +1,4 @@
-# Laravel 4 w/ Vagrant
+# Laravel 4 and Neo4j w/ Vagrant
 
 A basic Ubuntu 12.04 Vagrant setup with [Laravel4](http://laravel.com/docs), PHP 5.5 and neo4j community edition.
 PHP 5.4 w/ Apache 2.2 is available on the php54 branch.
