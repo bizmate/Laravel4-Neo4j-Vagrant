@@ -1,12 +1,13 @@
 class neo4j
 {
 
-    apt::key { 'neo4j':
+    apt::key { 'add neo4j key':
+        key => '2DC499C3',
         ensure => 'present',
-        key_source => 'http://debian.neo4j.org/neotechnology.gpg.key'
+        key_source => 'http://debian.neo4j.org/neotechnology.gpg.key',
     }
 
-    file_line { 'sudo_rule':
+    file_line { 'add neo4j sources':
         path => '/etc/apt/sources.list',
         line => 'deb http://debian.neo4j.org/repo stable/',
     }
@@ -14,14 +15,6 @@ class neo4j
     package { 'neo4j':
         ensure => latest,
         require => Exec['apt-get update'],
-        logoutput => true
-    }
-
-    exec { 'start neo4j':
-        command => "/bin/bash -c 'neo4j start'",
-        require => Package["neo4j"],
-        timeout => 5000,
-        logoutput => true
     }
 
 }
