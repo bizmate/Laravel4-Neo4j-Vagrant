@@ -20,6 +20,7 @@ class neo4j
     }
     
     file_line { 'allow external neo4j access':
+        notify => Service['neo4j-service'],
         path => '/etc/neo4j/neo4j-server.properties',
         line => 'org.neo4j.server.webserver.address=0.0.0.0'
         match => '#org.neo4j.server.webserver.address=0.0.0.0'
