@@ -5,7 +5,7 @@ class neo4j
         key => '2DC499C3',
         ensure => 'present',
         key_source => 'http://debian.neo4j.org/neotechnology.gpg.key',
-        Before => Package['neo4j'],
+        before => Package['neo4j'],
     }
 
     file_line { 'add neo4j sources':
@@ -19,11 +19,18 @@ class neo4j
         require => Exec['apt-get update'],
     }
     
+    service { 'neo4j':
+        name => 'neo4j-service',
+        ensure => running,
+        path => '/etc/init.d/neo4j-service',
+        require => Package['neo4j'],
+    }
+    
     file_line { 'allow external neo4j access':
-        notify => Service['neo4j-service'],
+        notify => Service['neo4j'],
         path => '/etc/neo4j/neo4j-server.properties',
-        line => 'org.neo4j.server.webserver.address=0.0.0.0'
-        match => '#org.neo4j.server.webserver.address=0.0.0.0'
+        line => 'org.neo4j.server.webserver.address=0.0.0.0',
+        match => '^#?org.neo4j.server.webserver.address=0.0.0.0',
         require => Package['neo4j'],
     }
 
