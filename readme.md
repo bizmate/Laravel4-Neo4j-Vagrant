@@ -97,3 +97,4 @@ Vagrant is [very well documented](http://vagrantup.com/v1/docs/index.html) but h
 * Add authentication to neo4j by default
 * Allow user to checkout repository by editing vagrantfile?
 * Install VIM by default!!!
+* Install pip by default, for my dotfiles
