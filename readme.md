@@ -91,3 +91,8 @@ Vagrant is [very well documented](http://vagrantup.com/v1/docs/index.html) but h
 * Redis - 2.2.12
 * Memcached - 1.4.13
 * Neo4j - 2.1.2
+
+### Todo
+* Restart neo4j service to complete configuration changes
+* Add authentication to neo4j by default
+* Allow user to checkout repository by editing vagrantfile?
