@@ -96,3 +96,4 @@ Vagrant is [very well documented](http://vagrantup.com/v1/docs/index.html) but h
 * Restart neo4j service to complete configuration changes
 * Add authentication to neo4j by default
 * Allow user to checkout repository by editing vagrantfile?
+* Install VIM by default!!!
