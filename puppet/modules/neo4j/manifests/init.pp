@@ -22,7 +22,8 @@ class neo4j
     service { 'neo4j':
         name => 'neo4j-service',
         ensure => running,
-        path => '/etc/init.d/neo4j-service',
+        enable => true,
+        #path => '/etc/init.d/neo4j-service',
         require => Package['neo4j'],
     }
     
